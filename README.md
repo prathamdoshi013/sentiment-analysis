@@ -1,46 +1,45 @@
-# Sentiment Analysis with BERT
+# Sentiment Analysis with TF-IDF and Deep Learning
 
-This project implements sentiment analysis using BERT (Bidirectional Encoder Representations from Transformers) for classifying text data into positive or negative sentiment.
+This project demonstrates sentiment analysis using TF-IDF vectorization and deep learning techniques. It involves training a deep learning model on a dataset of text data labeled with sentiment, then deploying the model using Streamlit for real-time sentiment analysis.
 
-## Overview
+## Files Included:
 
-The project consists of two main components:
+1. **`train_model.py`**: This script is responsible for training the deep learning model using TF-IDF vectorized text data.
 
-1. **app.py**: This file contains the Flask web application that allows users to input text and get real-time sentiment predictions using a pre-trained BERT model.
+2. **`app.py`**: This script contains the Streamlit application for performing real-time sentiment analysis using the trained model.
 
-2. **sentiment_analysis.ipynb**: This Jupyter Notebook file contains the code for training the sentiment analysis model using BERT. It includes data loading, preprocessing, model training, evaluation, and saving the trained model.
+3. **`sentiment_train.csv`**: CSV file containing the dataset for training the sentiment analysis model. It consists of two columns: `sentence` (containing the text data) and `label` (containing the sentiment label).
 
-## Setup
+4. **`tfidf_sentiment_model.h5`**: The trained deep learning model saved in HDF5 format.
 
-To run the Flask web application, follow these steps:
+5. **`tfidf_vectorizer.pkl`**: The TF-IDF vectorizer trained on the text data, saved using pickle.
 
-1. Install the required Python packages:
+## Setup Instructions:
+
+1. **Install Dependencies**: Ensure you have the required dependencies installed. You can install them using pip:
+
    ```
-   pip install -r requirements.txt
-   ```
-
-2. Run the Flask application:
-   ```
-   python app.py
+   pip install pandas scikit-learn tensorflow streamlit
    ```
 
-The web application will be accessible at `http://localhost:5000`.
+2. **Training the Model**: Run the `train_model.py` script to train the sentiment analysis model. This script will preprocess the text data, train the deep learning model, and save both the model and TF-IDF vectorizer.
 
-## Training the Model
+   ```
+   python train_model.py
+   ```
 
-To train the sentiment analysis model using BERT, follow the steps outlined in the `sentiment_analysis.ipynb` notebook. Make sure you have the required dataset (`sentiment_train.csv`) available in the project directory.
+3. **Running the Streamlit App**: Run the `app.py` script to launch the Streamlit web application for real-time sentiment analysis.
 
-## Requirements
+   ```
+   streamlit run app.py
+   ```
 
-- Python 
-- PyTorch
-- Transformers
-- Flask
-- pandas
-- scikit-learn
-- Jupyter Notebook (for training the model)
+4. **Interacting with the Application**: Once the Streamlit app is running, enter a sentence into the text input field and click the "Analyze Sentiment" button. The application will use the pre-trained model to predict the sentiment of the entered text and display the result.
 
-## Acknowledgments
+## Additional Notes:
 
-- This project utilizes the BERT model implemented in the Hugging Face `transformers` library.
-- The sentiment analysis dataset used for training the model can be found in repository.
+- The `train_model.py` script can be modified to adjust model hyperparameters, such as the number of epochs, batch size, and neural network architecture.
+
+- The performance of the sentiment analysis model can be evaluated using metrics such as accuracy, precision, recall, and F1-score. These metrics are computed using the `classification_report` function from scikit-learn.
+
+- Feel free to customize the Streamlit application (`app.py`) to include additional features or visualizations as needed.
