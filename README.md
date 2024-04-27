@@ -4,7 +4,7 @@ This project demonstrates sentiment analysis using TF-IDF vectorization and deep
 
 ## Files Included:
 
-1. **`train_model.py`**: This script is responsible for training the deep learning model using TF-IDF vectorized text data.
+1. **`main.py`**: This script is responsible for training the deep learning model using TF-IDF vectorized text data.
 
 2. **`app.py`**: This script contains the Streamlit application for performing real-time sentiment analysis using the trained model.
 
@@ -19,13 +19,13 @@ This project demonstrates sentiment analysis using TF-IDF vectorization and deep
 1. **Install Dependencies**: Ensure you have the required dependencies installed. You can install them using pip:
 
    ```
-   pip install pandas scikit-learn tensorflow streamlit
+   pip install pandas scikit-learn tensorflow streamlit pickle
    ```
 
-2. **Training the Model**: Run the `train_model.py` script to train the sentiment analysis model. This script will preprocess the text data, train the deep learning model, and save both the model and TF-IDF vectorizer.
+2. **Training the Model**: Run the `main.py` script to train the sentiment analysis model. This script will preprocess the text data, train the deep learning model, and save both the model and TF-IDF vectorizer.
 
    ```
-   python train_model.py
+   python main.py
    ```
 
 3. **Running the Streamlit App**: Run the `app.py` script to launch the Streamlit web application for real-time sentiment analysis.
@@ -38,7 +38,7 @@ This project demonstrates sentiment analysis using TF-IDF vectorization and deep
 
 ## Additional Notes:
 
-- The `train_model.py` script can be modified to adjust model hyperparameters, such as the number of epochs, batch size, and neural network architecture.
+- The `main.py` script can be modified to adjust model hyperparameters, such as the number of epochs, batch size, and neural network architecture.
 
 - The performance of the sentiment analysis model can be evaluated using metrics such as accuracy, precision, recall, and F1-score. These metrics are computed using the `classification_report` function from scikit-learn.
 
