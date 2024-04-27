@@ -1,6 +1,4 @@
-Flask
-torch
-transformers
+streamlit
 pandas
-numpy
+tensorflow
 sklearn
